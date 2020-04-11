@@ -18,6 +18,7 @@ except:
     mixed_precision = False  # not installed
 
 wdir = 'weights' + os.sep  # weights dir
+drive_wdir = '/content/drive/My Drive/Colab Notebooks/YOLOv3Data/'
 last = '/content/drive/My Drive/Colab Notebooks/YOLOv3Data/last.pt'
 best = '/content/drive/My Drive/Colab Notebooks/YOLOv3Data/best.pt'
 results_file = 'results.txt'
@@ -356,8 +357,8 @@ def train():
     n = opt.name
     if len(n):
         n = '_' + n if not n.isnumeric() else n
-        fresults, flast, fbest = 'results%s.txt' % n, wdir + 'last%s.pt' % n, wdir + 'best%s.pt' % n
-        for f1, f2 in zip([wdir + 'last.pt', wdir + 'best.pt', 'results.txt'], [flast, fbest, fresults]):
+        fresults, flast, fbest = 'results%s.txt' % n, drive_wdir + 'last%s.pt' % n, drive_wdir + 'best%s.pt' % n
+        for f1, f2 in zip([last, best, 'results.txt'], [flast, fbest, fresults]):
             if os.path.exists(f1):
                 os.rename(f1, f2)  # rename
                 ispt = f2.endswith('.pt')  # is *.pt

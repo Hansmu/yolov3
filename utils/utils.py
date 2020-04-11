@@ -597,14 +597,14 @@ def print_model_biases(model):
         pass
 
 
-def strip_optimizer(f='weights/last.pt'):  # from utils.utils import *; strip_optimizer()
+def strip_optimizer(f='/content/drive/My Drive/Colab Notebooks/YOLOv3Data/last.pt'):  # from utils.utils import *; strip_optimizer()
     # Strip optimizer from *.pt files for lighter files (reduced by 2/3 size)
     x = torch.load(f, map_location=torch.device('cpu'))
     x['optimizer'] = None
     torch.save(x, f)
 
 
-def create_backbone(f='weights/last.pt'):  # from utils.utils import *; create_backbone()
+def create_backbone(f='/content/drive/My Drive/Colab Notebooks/YOLOv3Data/last.pt'):  # from utils.utils import *; create_backbone()
     # create a backbone from a *.pt file
     x = torch.load(f, map_location=torch.device('cpu'))
     x['optimizer'] = None
