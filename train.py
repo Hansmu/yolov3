@@ -18,8 +18,8 @@ except:
     mixed_precision = False  # not installed
 
 wdir = 'weights' + os.sep  # weights dir
-last = wdir + 'last.pt'
-best = wdir + 'best.pt'
+last = '/content/drive/My Drive/Colab Notebooks/YOLOv3Data/last.pt'
+best = '/content/drive/My Drive/Colab Notebooks/YOLOv3Data/best.pt'
 results_file = 'results.txt'
 
 # Hyperparameters
