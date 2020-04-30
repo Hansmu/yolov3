@@ -219,6 +219,7 @@ def test(cfg,
     # Return results
     maps = np.zeros(nc) + map
     for i, c in enumerate(ap_class):
+        print(f'Going in with i={i}, c={c}. And maybe these too maps={maps}, ap={ap}')
         maps[c] = ap[i]
     return (mp, mr, map, mf1, *(loss.cpu() / len(dataloader)).tolist()), maps
 
