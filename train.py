@@ -348,10 +348,12 @@ def train():
             # Save last, best and delete
             torch.save(chkpt, last)
             if (best_fitness == fi) and not final_epoch:
+                print(f'Found new best with score {best_fitness}, saving: {best}')
                 torch.save(chkpt, best)
 
             # Save backup every 10 epochs (optional)
             if epoch > 0 and epoch % 25 == 0:
+                print('Saving checkpoint: ' + drive_wdir + 'backup%g.pt' % epoch)
                 torch.save(chkpt, drive_wdir + 'backup%g.pt' % epoch)
 
             # Delete checkpoint
