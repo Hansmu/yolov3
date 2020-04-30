@@ -337,7 +337,6 @@ def train():
 
         # Save model
         save = (not opt.nosave) or (final_epoch and not opt.evolve)
-        print(f'Is saving? {save}. Is no-save true')
         if save:
             with open(results_file, 'r') as f:  # create checkpoint
                 chkpt = {'epoch': epoch,
