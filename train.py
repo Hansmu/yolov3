@@ -150,8 +150,8 @@ def train():
 
     # Scheduler https://arxiv.org/pdf/1812.01187.pdf
     def lropt(x):
-        additional_multiplier = 1
-        return ((((1 + math.cos(x * math.pi / epochs)) / 2) ** 1.0) * 0.95 + 0.05) * additional_multiplier  # cosine
+        return 0.5 ** (x // 15)
+        # return ((((1 + math.cos(x * math.pi / epochs)) / 2) ** 1.0) * 0.95 + 0.05) * additional_multiplier  # cosine
 
     lf = lropt  # cosine
     scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)
